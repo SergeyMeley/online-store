@@ -1,7 +1,31 @@
+using Microsoft.EntityFrameworkCore;
+using OnlineStore.Application.Services;
+using OnlineStore.Domain.Interfaces;
+using OnlineStore.Infrastructure.Data;
+using OnlineStore.Infrastructure.Repositories;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql("User ID=postgres;Password=Dniwe2002;Host=localhost;Port=5432;Database=OnlineStore;Connection Lifetime=0;"));
 builder.Services.AddControllersWithViews();
+
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+//    .AddEntityFrameworkStores<AppDbContext>()
+//    .AddDefaultTokenProviders();
+
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+//builder.Services.AddScoped<IUserService, UserService>();
+
 
 var app = builder.Build();
 
@@ -19,6 +43,14 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Product}/{action=Catalog}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
