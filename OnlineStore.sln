@@ -5,8 +5,6 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Web", "OnlineStore.Web\OnlineStore.Web.csproj", "{217A09B0-DCDA-45A2-AE26-E38C5FC54919}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Api", "OnlineStore.Api\OnlineStore.Api.csproj", "{A36095F6-EA73-47D7-BE4C-36A55AE2A78A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.UnitTests", "OnlineStore.UnitTests\OnlineStore.UnitTests.csproj", "{8C859E7D-832F-42A4-A0F2-25F8F93E1675}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineStore.Domain", "OnlineStore.Domain\OnlineStore.Domain.csproj", "{C8382F0E-D219-423C-88DA-4C4DD95CB474}"
@@ -30,10 +28,6 @@ Global
 		{217A09B0-DCDA-45A2-AE26-E38C5FC54919}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{217A09B0-DCDA-45A2-AE26-E38C5FC54919}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{217A09B0-DCDA-45A2-AE26-E38C5FC54919}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A36095F6-EA73-47D7-BE4C-36A55AE2A78A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A36095F6-EA73-47D7-BE4C-36A55AE2A78A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A36095F6-EA73-47D7-BE4C-36A55AE2A78A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A36095F6-EA73-47D7-BE4C-36A55AE2A78A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C859E7D-832F-42A4-A0F2-25F8F93E1675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C859E7D-832F-42A4-A0F2-25F8F93E1675}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C859E7D-832F-42A4-A0F2-25F8F93E1675}.Release|Any CPU.ActiveCfg = Release|Any CPU
