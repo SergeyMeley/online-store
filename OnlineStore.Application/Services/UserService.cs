@@ -2,7 +2,6 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using OnlineStore.Application.DTOs;
 using OnlineStore.Application.Services;
-using System.Security.Claims;
 
 public class UserService : IUserService
 {

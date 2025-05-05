@@ -1,7 +1,4 @@
-﻿// Domain/Interfaces/IReviewRepository.cs
-using OnlineStore.Domain.Entities;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using OnlineStore.Domain.Entities;
 
 namespace OnlineStore.Domain.Interfaces
 {

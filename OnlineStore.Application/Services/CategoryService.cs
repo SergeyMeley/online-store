@@ -2,8 +2,6 @@
 using OnlineStore.Domain.Interfaces;
 using OnlineStore.Application.DTOs;
 using OnlineStore.Application.Services;
-using OnlineStore.Infrastructure.Repositories;
-using Microsoft.EntityFrameworkCore;
 
 public class CategoryService : ICategoryService
 {

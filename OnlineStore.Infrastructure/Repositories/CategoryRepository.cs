@@ -2,9 +2,6 @@
 using OnlineStore.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using OnlineStore.Domain.Entities;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace OnlineStore.Infrastructure.Repositories
 {
