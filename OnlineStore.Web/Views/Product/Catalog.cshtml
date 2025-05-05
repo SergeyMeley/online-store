@@ -1,0 +1,75 @@
+﻿@using OnlineStore.Application.DTOs
+@model IEnumerable<ProductDto>
+@{
+    ViewData["Title"] = "Каталог товаров";
+}
+
+<div class="container mt-4">
+    <h1>Каталог товаров</h1>
+
+    <!-- Форма фильтрации -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-4">
+                    <input type="text" name="SearchQuery" class="form-control" placeholder="Поиск..."
+                           value="@Context.Request.Query["SearchQuery"]">
+                </div>
+                <div class="col-md-3">
+                    <select name="CategoryId" class="form-select">
+                        <option value="">Все категории</option>
+                        @foreach (var category in ViewBag.Categories)
+                        {
+                            <option value="@category.Id"
+                                    selected="@(Context.Request.Query["CategoryId"] == category.Id.ToString())">
+                                @category.Name
+                            </option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <input type="number" name="MinPrice" class="form-control" placeholder="Цена от"
+                           value="@Context.Request.Query["MinPrice"]">
+                </div>
+                <div class="col-md-2">
+                    <input type="number" name="MaxPrice" class="form-control" placeholder="Цена до"
+                           value="@Context.Request.Query["MaxPrice"]">
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="btn btn-primary w-100">Фильтр</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Список товаров -->
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                   @*  <img src="@product.ImageUrl" class="card-img-top" alt="@product.Name" style="height: 200px; object-fit: cover;"> *@
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">@product.Description</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="fw-bold">@product.Price.ToString("C")</span>
+@*                             <span class="badge bg-success">@product.AverageRating.ToString("0.0") ★</span> *@
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a asp-action="Details" asp-route-id="@product.Id" class="btn btn-outline-primary w-100">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Пустой каталог -->
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning text-center">
+            Товары не найдены. Попробуйте изменить параметры фильтрации.
+        </div>
+    }
+</div>
